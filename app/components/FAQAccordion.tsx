@@ -55,14 +55,14 @@ export default function FAQAccordion() {
   };
 
   return (
-    <section>
-      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+    <section className="slide-in">
+      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">
         Questions?
       </p>
-      <h2 className="mt-4 text-3xl font-semibold text-slate-900">
+      <h2 className="mt-4 text-3xl font-semibold text-slate-50">
         Frequently asked questions
       </h2>
-      <p className="mt-4 max-w-2xl text-slate-600">
+      <p className="mt-4 max-w-2xl text-slate-300">
         Got questions about how I work, pricing, or timelines? Here are answers
         to common questions from my clients.
       </p>
@@ -72,17 +72,17 @@ export default function FAQAccordion() {
           <button
             key={faq.id}
             onClick={() => toggleAccordion(faq.id)}
-            className="w-full text-left rounded-2xl border border-slate-200 bg-white px-6 py-4 transition hover:bg-slate-50"
+            className="w-full text-left rounded-2xl border border-slate-600 bg-slate-800 px-6 py-4 transition hover:bg-slate-700"
           >
             <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-slate-900">{faq.question}</h3>
+              <h3 className="font-semibold text-slate-50">{faq.question}</h3>
               <span
                 className={`ml-4 flex-shrink-0 transition-transform duration-300 ${
                   openId === faq.id ? 'rotate-180' : ''
                 }`}
               >
                 <svg
-                  className="h-5 w-5 text-slate-600"
+                  className="h-5 w-5 text-slate-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -97,7 +97,7 @@ export default function FAQAccordion() {
               </span>
             </div>
             {openId === faq.id && (
-              <p className="mt-4 text-slate-600">{faq.answer}</p>
+              <p className="mt-4 text-slate-300">{faq.answer}</p>
             )}
           </button>
         ))}
